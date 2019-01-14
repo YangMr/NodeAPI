@@ -6,3 +6,6 @@ fs.access("./write3.txt",function (error) {
     }
     console.log("文件存在")
 });
+
+
+
