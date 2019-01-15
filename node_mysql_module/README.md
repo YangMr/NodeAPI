@@ -18,35 +18,35 @@
      
 进入项目文档，新建TestMysql.js示例，编写如下代码:
 
-`const mysql   = require('mysql');
- const connection = mysql.createConnection({
-  host   : 'localhost',
-  user   : '数据库服务器用户名',
-  password : '数据库服务器密码',
-  database : '数据库用户名'
- });
+    const mysql   = require('mysql');
+    const connection = mysql.createConnection({
+     host   : 'localhost',
+     user   : '数据库服务器用户名',
+     password : '数据库服务器密码',
+     database : '数据库用户名'
+    });
+     
+    connection.connect();
+     
+    connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+     if (err) throw err;
+     
+     console.log('The solution is: ', rows[0].solution);
+    });
   
- connection.connect();
-  
- connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
-  if (err) throw err;
-  
-  console.log('The solution is: ', rows[0].solution);
- });
-  
- connection.end();`
+    connection.end();
  
- 连接基本参数
+连接基本参数
  
- `host 主机名，localhost代表本地
-   user Mysql用户
-   password 密码
-   database 连接的数据库
-   client.connect()连接数据库
-   
-   client.query()执行SQL语句
-   client.end()关闭连接。
-   然后通过node TestMysql.js执行程序，确保你在执行之前已经启动了Mysql服务。`
+    host 主机名，localhost代表本地
+    user Mysql用户
+    password 密码
+    database 连接的数据库
+    client.connect()连接数据库
+    
+    client.query()执行SQL语句
+    client.end()关闭连接。
+    然后通过node TestMysql.js执行程序，确保你在执行之前已经启动了Mysql服务。
    
 ## 5. 增删改查
    
