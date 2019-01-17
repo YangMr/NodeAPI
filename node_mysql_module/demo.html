@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            type : "POST",
+            url : "http://23139f2z38.51mypc.cn/proxy_manage/proxyTeacherWechat/getProxyTeacherByTel",
+            data : {
+                tel : "13456780909"
+            },
+            success : function (response) {
+                console.log(response)
+            },
+            error : function (error) {
+                console.log(error);
+            }
+        })
+    })
+</script>
